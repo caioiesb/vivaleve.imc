@@ -1,0 +1,173 @@
+/* Configurações Globais e Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container Principal */
+.calculator-container {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Cabeçalho */
+.calc-header h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.calc-header h1 span {
+    color: #2dd4bf; /* Cor destaque */
+}
+
+.calc-header p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* Formulário e Inputs */
+.calc-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    font-weight: 600;
+}
+
+.input-group input {
+    background: #0f172a;
+    border: 2px solid #334155;
+    padding: 14px 16px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #2dd4bf;
+    box-shadow: 0 0 0 4px rgba(45, 212, 191, 0.15);
+}
+
+/* Botão */
+button {
+    background: #2dd4bf;
+    color: #0f172a;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #14b8a6;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Seção de Resultados */
+hr {
+    border: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 30px 0;
+}
+
+.result-container {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+.result-container h2 {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    margin-bottom: 15px;
+}
+
+.result-value {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+#imc-number {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.status-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+#imc-description {
+    color: #cbd5e1;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Classes Utilitárias controladas pelo JS */
+.hidden {
+    display: none;
+}
+
+/* Cores Dinâmicas para o Status */
+.weight-under { color: #38bdf8; }       /* Azul */
+.weight-under .status-badge { background: rgba(56, 189, 248, 0.15); }
+
+.weight-normal { color: #4ade80; }      /* Verde */
+.weight-normal .status-badge { background: rgba(74, 222, 128, 0.15); }
+
+.weight-over { color: #facc15; }        /* Amarelo */
+.weight-over .status-badge { background: rgba(250, 204, 21, 0.15); }
+
+.weight-obese { color: #f87171; }       /* Vermelho */
+.weight-obese .status-badge { background: rgba(248, 113, 113, 0.15); }
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
